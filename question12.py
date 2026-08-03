@@ -5,6 +5,9 @@
 # 4. Lcm of two digits
 # 5. exit
 # ask value form user
+from math import gcd
+
+
 while True:
     print("1. Sum of n natural numbers")
     print("2. Reverse of given number")
@@ -30,10 +33,11 @@ while True:
     elif choice == 3:
         num = int(input("Enter a number: "))
         count = 0
-        for i in range(1, num + 1):
-            if i == num:
-                count += 1
-        print("The number", num, "is repeated", count, "times.")
+        while num != 0:
+            digit = num % 10
+            count += 1
+            num //= 10
+        print("The numberis repeated", count, "times.")
 
     elif choice == 4:
         num1 = int(input("Enter first number: "))
@@ -47,3 +51,4 @@ while True:
 
     else:
         print("Invalid choice. Please try again.")
+        
